@@ -1,2 +1,22 @@
 <h1>Games#show</h1>
 <p>Find me in app/views/games/show.html.erb</p>
+
+<br>
+
+<p><b><%= @game.name %></b></p>
+<p>Category: <%= @game.category %></p>
+<p>Condition: <%= @game.condition %></p>
+<p>Platform: <%= @game.platform %></p>
+<p>Provided by: <%= @game.user.username %></p>
+
+<br>
+
+<p>
+  <%= link_to "Delete this game",
+  game_path(@game),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+</p>
+
+<br>
+
+<p><%= link_to "Back to games", games_path %></p>
