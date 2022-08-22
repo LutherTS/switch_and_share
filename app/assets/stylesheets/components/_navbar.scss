@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: #f8e4c8;
+  box-shadow: 0 0 30px lightgray;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +10,57 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.fa-gamepad {
+  color: #50C7BB;
+  text-shadow: 0 0 3px black;
+}
+
+.fa-gamepad:hover {
+  color: #60e0d4;
+}
+
+#website-name {
+  vertical-align: middle;
+  justify-content: center;
+  font-family: "Silkscreen", cursive;
+  font-weight: 400;
+  color:#50C7BB;
+  text-shadow: 0 0 3px black;
+  padding-left: 155px;
+  text-decoration: none;
+}
+
+#website-name:hover {
+  color: #60e0d4;
+}
+
+.avatar {
+  border: solid 2px #50C7BB;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.nav-link {
+  padding: 15px;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 400;
+  color: #0d090f;
+}
+
+.btn-flat {
+  border: 2px solid #50C7BB;
+  padding: 8px 24px;
+  border-radius: 50px;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  margin-right: 10px;
+}
+
+.btn-flat:hover {
+  opacity: 1;
+  background-color: #50C7BB;
+  font-weight: bolder;
 }
