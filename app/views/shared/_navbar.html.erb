@@ -1,0 +1,36 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <%= link_to root_path do %>
+      <i class="fa-solid fa-gamepad fa-3x"></i>
+    <% end %>
+    <h1><%= link_to 'Switch and Share', root_path, id:"website-name" %></h1>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <%# if user_signed_in? %>
+          <li class="nav-item active">
+            <%= link_to "Browse Games List", games_path, class: " btn btn-flat nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Add a Game", new_game_path, class: " btn btn-flat nav-link" %>
+          </li>
+          <li class="nav-item dropdown">
+            <%= image_tag "detective-pikachu_16x9.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "My bookings", "#", class: "dropdown-item" %>
+              <%= link_to "Account Settings", "#", class: "dropdown-item" %>
+              <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
+            </div>
+          </li>
+        <%# else %>
+          <!--li class="nav-item"-->
+            <%#= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <!--/li-->
+        <%# end %>
+      </ul>
+    </div>
+  </div>
+</div>
