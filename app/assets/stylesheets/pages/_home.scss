@@ -1,1 +1,52 @@
 // Specific CSS for your home-page
+.banner {
+  background-size: cover;
+  background-position: center;
+  background-color: #e2e2d1;
+  height: 100vh;
+}
+
+.banner h1 {
+  margin: 0;
+  color: #44c3b6;
+  text-shadow: -2px 1px 0px rgba(0, 0, 0, .6);
+  font-size: 40px;
+  font-weight: bold;
+  font-family: 'Silkscreen', cursive;
+}
+
+.banner p {
+  font-size: 25px;
+  color: #44c3b6;
+  opacity: .7;
+  text-shadow: -2px 1px 0px rgba(0, 0, 0, .6);
+  font-family: 'Silkscreen', cursive;
+}
+
+.banner-card {
+  background: rgba(248, 228, 200, 0.75);
+  padding: 20px 10px;
+  border-radius: 5px;
+  align-content: center;
+}
+
+.btn-flat{
+  font-family: 'Silkscreen', cursive;
+  color: #44c3b6;
+  border-color: #44c3b6;
+}
+
+.btn_flat:hover{
+  box-shadow: -3px -2px 0px rgba(248, 228, 200, .65);
+}
+
+body {
+  background-color: #F8E4C8;
+}
+
+.homepage {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 100vh;
+}
