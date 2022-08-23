@@ -11,12 +11,14 @@
 
 <br>
 
+<% if @game.user == current_user %>
 <p>
   <%= link_to "Delete this game",
   game_path(@game),
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 </p>
-
 <br>
+<% end %>
+
 
 <p><%= link_to "Back to games", games_path %></p>

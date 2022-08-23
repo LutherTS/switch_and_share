@@ -3,10 +3,27 @@
 
 <br>
 
-<% @games.each do |game| %>
+<% @games.sort.each do |game| %>
+<%# @games.sort.reverse.each %>
 <p><%= link_to game.name, game_path(game) %></p>
 <% end %>
 
+
 <br>
 
+<% if user_signed_in? %>
 <p><%= link_to "Add a game", new_game_path %></p>
+
+<br>
+<% end %>
+
+<%#= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
+
+<p><%= link_to "Log in",
+  user_session_path %></p>
+
+<p><%= link_to "Log out",
+  destroy_user_session_path,
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+
+<br>
