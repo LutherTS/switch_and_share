@@ -1,0 +1,33 @@
+.buttons-show {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 20px;
+}
+
+.delete-button {
+  color: #d63a3a;
+}
+
+.delete-button:hover {
+  color: #ff0000 !important;
+}
+
+.game-show{
+  opacity: 1;
+  border: none;
+  padding: 0px;
+  margin: 0px;
+  font-size: 35px;
+}
+
+.game-show:hover {
+  border: none;
+  padding: 0px;
+  margin: 0px;
+  font-size: 35px;
+  background: none;
+  font-weight: normal;
+  color: #62f0e2;
+}

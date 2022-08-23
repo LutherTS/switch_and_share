@@ -1,19 +1,23 @@
-<div class="row cols-2 game-card">
-  <div class="col-5 game-image-column">
+<div class="row col-12 game-card">
+  <div class="col-lg-5 col-12 game-image-column">
     <%= image_tag("botw", class: "game-image") %>
     <br>
-    <div class="buttons-show">
-        <%= link_to "Delete",
-        game_path(@game),
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-flat game-show inline" if policy(@game).destroy? %>
-        <%= link_to "Back", games_path, class:"btn btn-flat game-show inline"%>
-      </div>
   </div>
-  <div class="col-7">
-    <h1 class="game-title"><b><%= @game.name %></b></h1>
-    <p class="p-show"><strong>Category:</strong> <%= @game.category %></p>
-    <p class="p-show"><strong>Condition:</strong> <%= @game.condition %></p>
-    <p class="p-show"><strong>Platform:</strong> <%= @game.platform %></p>
-    <p class="p-show"><strong>Provided by:</strong> <%= @game.user.username %></p>
+  <div class="col-lg-7 col-12 desc-col">
+    <div class="game-description">
+      <h3 class="game-title"><b><%= @game.name %></b></h3>
+      <p class="p-show"><strong>Category:</strong> <%= @game.category %></p>
+      <p class="p-show"><strong>Condition:</strong> <%= @game.condition %></p>
+      <p class="p-show"><strong>Platform:</strong> <%= @game.platform %></p>
+      <p class="p-show"><strong>Provided by:</strong> <%= @game.user.username %></p>
+    </div>
+    <br>
+    <div class="buttons-show">
+      <%= link_to "Back", games_path, class:"btn btn-flat game-show inline"%>
+      <%= link_to "Delete",
+        game_path(@game),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+        class:"btn btn-flat game-show inline delete-button"%>
+    </div>
   </div>
 </div>
