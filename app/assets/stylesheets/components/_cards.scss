@@ -2,21 +2,61 @@
   background-size: cover;
   background-position: center;
   height: 180px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), image-url("switch_console");
 }
 
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.card-category .card-infos {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  flex-direction: column;
+  padding: 50px 16px 0px 16px;
+  height: 100%;
+  a {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.sub-infos {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  p {
+    font-family: 'Titillium Web', sans-serif;
+    color: wheat;
+    font-size: 15px;
+  }
+}
+
+#card-sub-infos {
+  position: fixed;
+  bottom: 0;
+}
+
+.game-title {
+  text-decoration: none;
+  text-align: center;
+  color: #44c3b6;
+  text-shadow: 1px 1px 0px wheat;
+  font-size: 25px;
+  font-family: 'Silkscreen', cursive;
+
+  &:hover {
+    color: #60e0d4;
+  }
 }
 
 // Smallest device

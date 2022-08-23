@@ -9,6 +9,10 @@
   background-size: cover;
 }
 
+#add-game-button {
+  width: 180px;
+}
+
 .banner-index h1 {
   color: #44c3b6;
   text-shadow: -2px 1px 0px rgba(0, 0, 0, .6);
@@ -28,5 +32,6 @@
     font-size: 25px;
     font-weight: bolder;
     margin-top: auto;
+    color: #842C36;
   }
 }
