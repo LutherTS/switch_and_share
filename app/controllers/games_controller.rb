@@ -1,31 +1,38 @@
 class GamesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
-    @games = Game.all
+    @games = policy_scope(Game)
   end
 
   def show
     @game = Game.find(params[:id])
+    authorize @game
   end
 
   def new
     @game = Game.new
     @user = User.new
+    authorize @game
   end
 
   def create
     @game = Game.new(game_params)
+    @game.user = current_user
 
     if @game.save
       redirect_to game_path(@game)
     else
       render :new, status: :unprocessable_entity
     end
+    authorize @game
   end
 
   def destroy
     @game = Game.find(params[:id])
     @game.destroy
     redirect_to games_path, status: :see_other
+    authorize @game
   end
 
   private

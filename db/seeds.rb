@@ -20,7 +20,7 @@ first_user = User.create!(
 puts "First user added."
 
 puts "Adding second user..."
-User.create!(
+second_user = User.create!(
   email: "banane@banane.com",
   password: "banana",
   username: "Bana"
@@ -47,7 +47,7 @@ Game.create!(
   category: "Party",
   condition: "Acceptable",
   platform: "Nintendo Switch",
-  user: first_user
+  user: second_user
 )
 puts "Three test games added."
 
