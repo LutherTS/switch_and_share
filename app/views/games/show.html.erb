@@ -5,7 +5,7 @@
     <div class="buttons-show">
         <%= link_to "Delete",
         game_path(@game),
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-flat game-show inline"%>
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-flat game-show inline" if policy(@game).destroy? %>
         <%= link_to "Back", games_path, class:"btn btn-flat game-show inline"%>
       </div>
   </div>
@@ -15,8 +15,5 @@
     <p class="p-show"><strong>Condition:</strong> <%= @game.condition %></p>
     <p class="p-show"><strong>Platform:</strong> <%= @game.platform %></p>
     <p class="p-show"><strong>Provided by:</strong> <%= @game.user.username %></p>
-
-    <br>
-
   </div>
 </div>
