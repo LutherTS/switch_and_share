@@ -1,0 +1,41 @@
+.game-title{
+  font-family: 'Inconsolata', monospace;
+  color: #423629;
+}
+
+.p-show{
+  font-family: 'Inconsolata', monospace;
+  color: #423629;
+  font-size: 18px;
+}
+
+.inline {
+  display: inline
+}
+
+.game-image {
+  // width: 50%;
+  height: 500px;
+  // min-width: 300px;
+}
+
+.game-card {
+  border-radius: 10px;
+  width: 100%;
+}
+
+.game-image-column {
+  padding: 0px;
+  justify-content: center;
+  display: flex;
+  margin:0px;
+}
+
+.game-description {
+  margin: 20px;
+}
+
+.desc-col {
+  padding-top: 20px;
+  overflow:hidden;
+}

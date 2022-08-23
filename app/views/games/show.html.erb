@@ -1,22 +1,23 @@
-<h1>Games#show</h1>
-<p>Find me in app/views/games/show.html.erb</p>
-
-<br>
-
-<p><b><%= @game.name %></b></p>
-<p>Category: <%= @game.category %></p>
-<p>Condition: <%= @game.condition %></p>
-<p>Platform: <%= @game.platform %></p>
-<p>Provided by: <%= @game.user.username %></p>
-
-<br>
-
-<p>
-  <%= link_to "Delete this game",
-  game_path(@game),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-</p>
-
-<br>
-
-<p><%= link_to "Back to games", games_path %></p>
+<div class="row col-12 game-card">
+  <div class="col-lg-5 col-12 game-image-column">
+    <%= image_tag("botw", class: "game-image") %>
+    <br>
+  </div>
+  <div class="col-lg-7 col-12 desc-col">
+    <div class="game-description">
+      <h3 class="game-title"><b><%= @game.name %></b></h3>
+      <p class="p-show"><strong>Category:</strong> <%= @game.category %></p>
+      <p class="p-show"><strong>Condition:</strong> <%= @game.condition %></p>
+      <p class="p-show"><strong>Platform:</strong> <%= @game.platform %></p>
+      <p class="p-show"><strong>Provided by:</strong> <%= @game.user.username %></p>
+    </div>
+    <br>
+    <div class="buttons-show">
+      <%= link_to "Back", games_path, class:"btn btn-flat game-show inline"%>
+      <%= link_to "Delete",
+        game_path(@game),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+        class:"btn btn-flat game-show inline delete-button"%>
+    </div>
+  </div>
+</div>
