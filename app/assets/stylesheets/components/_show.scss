@@ -1,0 +1,54 @@
+.game-title{
+  font-family: 'Titillium Web', sans-serif;
+  color: #F8E4C8;
+}
+
+.p-show{
+  font-family: 'Titillium Web', sans-serif;
+  color: #F8E4C8;
+  font-size: 18px;
+}
+
+.inline {
+  display: inline
+}
+
+.game-image {
+  border-radius: 5px;
+  width: 100%;
+}
+
+.game-card {
+  background-color: #d7c0a0;
+  padding: 20px;
+  border-radius: 10px;
+  width: 75%;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+}
+
+.game-image-column {
+  padding: 0px;
+  justify-content: center;
+}
+
+.game-show {
+  border: none;
+  padding: 0px;
+  margin: 0px;
+  font-size: 35px;
+  margin: 30px 0px;
+}
+
+.game-show:hover {
+  border: none;
+  padding: 0px;
+  margin: 0px;
+  font-size: 35px;
+  background: none;
+}
+
+.buttons-show {
+  justify-content: space-between;
+}
