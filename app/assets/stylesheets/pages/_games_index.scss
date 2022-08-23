@@ -1,0 +1,32 @@
+.banner-index {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  position: relative;
+}
+
+.container-banner {
+  background-size: cover;
+}
+
+.banner-index h1 {
+  color: #44c3b6;
+  text-shadow: -2px 1px 0px rgba(0, 0, 0, .6);
+  font-size: 40px;
+  font-weight: bold;
+  font-family: 'Silkscreen', cursive;
+  text-align: center;
+}
+
+.list-infos {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+
+  p {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 25px;
+    font-weight: bolder;
+    margin-top: auto;
+  }
+}
