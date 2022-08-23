@@ -24,20 +24,25 @@
 }
 
 .banner-card {
-  background: rgba(248, 228, 200, 0.75);
+  background: rgba(248, 228, 200, 0.85);
   padding: 20px 10px;
   border-radius: 5px;
   align-content: center;
 }
 
-.btn-flat{
+.home-button{
+  opacity: .9;
   font-family: 'Silkscreen', cursive;
-  color: #44c3b6;
-  border-color: #44c3b6;
+  color: #F8E4C8;
+  border-color: #F8E4C8;
+  background-color: #44c3b6;
 }
 
-.btn_flat:hover{
-  box-shadow: -3px -2px 0px rgba(248, 228, 200, .65);
+.home-button:hover{
+  opacity: 1;
+  background-color: #50C7BB;
+  font-weight: bolder;
+  color: #F8E4C8;
 }
 
 body {
@@ -49,4 +54,8 @@ body {
   align-items: center;
   display: flex;
   height: 100vh;
+}
+
+.mt-5 {
+  margin: 3rem auto !important;
 }

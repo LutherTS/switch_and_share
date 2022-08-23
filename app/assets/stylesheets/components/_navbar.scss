@@ -1,8 +1,10 @@
 .navbar-lewagon {
-  justify-content: space-between;
   background: #f8e4c8;
-  box-shadow: 0 0 30px lightgray;
+  box-shadow: 0px 2px 17px rgba(80, 199, 187, .2);
+  display: flex;
+  justify-content: space-between;
 }
+
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
@@ -14,7 +16,8 @@
 
 .fa-gamepad {
   color: #50C7BB;
-  text-shadow: 0 0 3px black;
+  text-shadow: -2px 1px 0px rgba(0, 0, 0, .6);
+  padding-left: 8px;
 }
 
 .fa-gamepad:hover {
@@ -27,8 +30,7 @@
   font-family: "Silkscreen", cursive;
   font-weight: 400;
   color:#50C7BB;
-  text-shadow: 0 0 3px black;
-  padding-left: 155px;
+  text-shadow: -2px 1px 0px rgba(0, 0, 0, .6);
   text-decoration: none;
 }
 
@@ -57,10 +59,23 @@
   opacity: 0.6;
   transition: opacity 0.3s ease;
   margin-right: 10px;
+  font-family: 'Silkscreen', cursive;
+  color: #50C7BB;
 }
 
 .btn-flat:hover {
   opacity: 1;
   background-color: #50C7BB;
   font-weight: bolder;
+  color: #F8E4C8;
+  border-color: #F8E4C8;
+}
+
+.main-nav-link {
+  width: 30%;
+}
+
+.navbar-collapse {
+  justify-content: flex-end;
+  padding-right: 8px;
 }

@@ -1,15 +1,19 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <%= link_to root_path do %>
+  <div class="main-nav-link">
+   <%= link_to root_path do %>
       <i class="fa-solid fa-gamepad fa-3x"></i>
     <% end %>
-    <h1><%= link_to 'Switch and Share', root_path, id:"website-name" %></h1>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  </div>
+  <div class="main-nav-link">
+      <h1><%= link_to 'Switch and Share', root_path, id:"website-name" %></h1>
+  </div>
+  <div class="main-nav-link">
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
+      <ul class="navbar-nav">
         <%# if user_signed_in? %>
           <li class="nav-item active">
             <%= link_to "Browse Games List", games_path, class: " btn btn-flat nav-link" %>
