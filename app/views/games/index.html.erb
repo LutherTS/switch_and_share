@@ -8,7 +8,7 @@
 
 <div class="list-infos">
   <p><%= "Games (#{@games.count})" %></p>
-  <p><%= link_to "Add a game", new_game_path, class:'btn btn-flat', id:'add-game-index' %></p>
+  <p><%= link_to "Add a game", new_game_path, class:'btn btn-flat home-button', id:'add-game-button' %></p>
 </div>
 
 <div class="container-games-list">
@@ -16,7 +16,15 @@
     <div class="cards">
       <% @games.each do |game| %>
         <div class="card-category">
-          <p><%= link_to game.name, game_path(game) %></p>
+          <div class="card-infos">
+            <%= link_to game_path(game) do %>
+             <h2 class='game-title' ><%=  game.name %></h2>
+            <% end %>
+            <div class="sub-infos">
+              <p><%= "Platform: #{game.platform}" %></p>
+              <p><%= "Genre: #{game.category}" %></p>
+            </div>
+          </div>
         </div>
       <% end %>
     </div>
