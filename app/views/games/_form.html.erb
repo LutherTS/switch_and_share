@@ -1,18 +1,20 @@
 <% condition_collection = ["Excellent", "Good", "Acceptable"] %>
 <% platform_collection = ["Nintendo Switch", "PlayStation 4", "PlayStation 5", "Xbox One", "Xbox Series X"] %>
 
-<div class="container add-form">
+<div class="container pt-5 add-form">
   <%= simple_form_for(@game) do |f| %>
-    <div class="col-6">
-      <%= f.input :name, placeholder: 'Type the name...' %>
-      <%= f.input :category, placeholder: 'Type the category...' %>
-      <!-- <%= f.input :condition, placeholder: 'Type the condition...' %> -->
-      <%= f.input :condition, collection: condition_collection, prompt: 'Choose the condition...' %>
-      <!-- <%= f.input :platform, placeholder: 'Type the platform...' %> -->
-      <%= f.input :platform, collection: platform_collection, selected: 'Nintendo Switch' %>
-      <%= f.association :user, collection: User.all, prompt: 'Provided by...' %>
-      <%= f.submit %>
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <%= f.input :name, placeholder: 'Type the name...' %>
+        <%= f.input :category, placeholder: 'Type the category...' %>
+        <!-- <%= f.input :condition, placeholder: 'Type the condition...' %> -->
+        <%= f.input :condition, collection: condition_collection, prompt: 'Choose the condition...' %>
+        <!-- <%= f.input :platform, placeholder: 'Type the platform...' %> -->
+        <%= f.input :platform, collection: platform_collection, selected: 'Nintendo Switch' %>
+        <%= f.association :user, collection: User.all, prompt: 'Provided by...' %>
+        <%= f.submit %>
+      </div>
+      <!-- "Provided by" currently included for devise to accept new games. -->
     </div>
-    <!-- "Provided by" currently included for devise to accept new games. -->
   <% end %>
 </div>
