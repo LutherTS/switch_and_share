@@ -19,7 +19,7 @@
         <div class="card-category">
           <div class="card-infos">
             <%= link_to game_path(game) do %>
-             <h2 class='game-title' ><%=  game.name %></h2>
+             <h2 class='game-title' ><%= game.name %></h2>
             <% end %>
             <div class="sub-infos">
               <p><%= "Platform: #{game.platform}" %></p>

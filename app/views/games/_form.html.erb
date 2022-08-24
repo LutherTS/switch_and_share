@@ -11,6 +11,7 @@
       <%#= f.input :platform, placeholder: 'Type the platform...' %>
       <%= f.input :platform, collection: platform_collection, selected: 'Nintendo Switch' %>
       <%#= f.association :user, collection: User.all, prompt: 'Provided by...' %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
       <%= f.submit %>
     </div>
     <!-- "Provided by" currently included for devise to accept new games. (Previously.) -->
