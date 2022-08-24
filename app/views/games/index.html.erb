@@ -14,7 +14,8 @@
 <div class="container-games-list">
   <div class="col-12">
     <div class="cards">
-      <% @games.each do |game| %>
+      <% @games.sort.each do |game| %>
+      <!-- or @games.sort.reverse.each -->
         <div class="card-category">
           <div class="card-infos">
             <%= link_to game_path(game) do %>
