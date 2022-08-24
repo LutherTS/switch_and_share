@@ -4,20 +4,20 @@
 <div class="container pt-5 add-form">
   <%= simple_form_for(@game) do |f| %>
     <div class="row justify-content-center">
-      <div class="col-12 game-form">
+      <div class="col-6 game-form">
         <div class="row">
-          <div class="col-12 mb-3">
+          <div class="col-6 mb-3">
             <%= f.input :name, placeholder: 'Type the name...' %>
           </div>
-          <div class="col-12 mb-3">
+          <div class="col-6 mb-3">
           <%= f.input :category, placeholder: 'Type the category...' %>
           </div>
           <%#= f.input :condition, placeholder: 'Type the condition...' %>
-          <div class="col-12 mb-3">
+          <div class="col-6 mb-3">
             <%= f.input :condition, collection: condition_collection, prompt: 'Choose the condition...' %>
           </div>
           <%#= f.input :platform, placeholder: 'Type the platform...' %>
-          <div class="col-12 mb-3">
+          <div class="col-6 mb-3">
             <%= f.input :platform, collection: platform_collection, selected: 'Nintendo Switch' %>
           </div>
           <div class="col-12 mb-3">
@@ -25,7 +25,7 @@
           <%= f.input :photos, as: :file, input_html: { multiple: true } %>
           </div>
           <div class="col-12">
-          <%= f.submit %>
+          <%= f.submit class:'btn btn-flat booking' %>
           </div>
         </div>
       </div>
