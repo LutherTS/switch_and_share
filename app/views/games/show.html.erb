@@ -1,3 +1,12 @@
+<div class="d-flex flex-row justify-content-between">
+    <div class="button-back">
+      <%= link_to "Back", games_path, class:"btn btn-flat back"%>
+    </div>
+    <%= link_to "Delete",
+      game_path(@game),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+      class: "btn btn-flat delete" if policy(@game).destroy? %>
+</div>
 <div class="row col-12 game-card">
   <div class="col-lg-5 col-12 game-image-column">
     <%= cl_image_tag(@game.photos[1].key, class: "game-image") %>
@@ -10,15 +19,11 @@
       <p class="p-show"><strong>Condition:</strong> <%= @game.condition %></p>
       <p class="p-show"><strong>Platform:</strong> <%= @game.platform %></p>
       <p class="p-show"><strong>Provided by:</strong> <%= @game.user.username %></p>
+      <div class="button-back">
+        <%= link_to "Book this game", new_game_booking_path(@game), class:"btn btn-flat booking"%>
+      </div>
     </div>
     <br>
-    <div class="buttons-show">
-      <%= link_to "Back", games_path, class:"btn btn-flat game-show inline"%>
-      <%= link_to "Delete",
-        game_path(@game),
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
-        class:"btn btn-flat game-show inline delete-button" if policy(@game).destroy? %>
-    </div>
   </div>
 </div>
 
