@@ -17,7 +17,7 @@
       <%= link_to "Delete",
         game_path(@game),
         data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
-        class:"btn btn-flat game-show inline delete-button"%>
+        class:"btn btn-flat game-show inline delete-button" if policy(@game).destroy? %>
     </div>
   </div>
 </div>
