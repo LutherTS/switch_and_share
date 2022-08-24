@@ -14,9 +14,9 @@
 <div class="container-games-list">
   <div class="col-12">
     <div class="cards">
-      <% @games.sort.each do |game| %>
-      <!-- or @games.sort.reverse.each -->
-        <div class="card-category">
+      <% @games.sort.reverse.each do |game| %>
+      <!-- or @games.sort.each -->
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= game.photos.attached? ? cl_image_path(game.photos[0].key) : asset_path('switch_console.jpeg') %>)">
           <div class="card-infos">
             <%= link_to game_path(game) do %>
              <h2 class='game-title' ><%= game.name %></h2>
@@ -31,3 +31,5 @@
     </div>
   </div>
 </div>
+
+<%#= cl_image_tag @game.photos[0].key %>

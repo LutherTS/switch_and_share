@@ -113,7 +113,7 @@ game6 = Game.create!(
   category: "Action",
   condition: "Acceptable",
   platform: "Nintendo Switch",
-  user: third_user
+  user: first_user
 )
 game6_photo_url_a = "https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_AstralChain_image1600w.jpg"
 game6_photo_file_a = URI.open(game6_photo_url_a)
@@ -127,7 +127,7 @@ game7 = Game.create!(
   category: "Strategy",
   condition: "Excellent",
   platform: "Nintendo Switch",
-  user: first_user
+  user: third_user
 )
 game7_photo_url_a = "https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_FireEmblemThreeHouses_image1600w.jpg"
 game7_photo_file_a = URI.open(game7_photo_url_a)
@@ -152,10 +152,10 @@ game8.photos.attach(io: game8_photo_file_b, filename: "Donkey Kong Country Tropi
 
 game9 = Game.create!(
   name: "Yoshi's Crafted World",
-  category: "Role-Playing",
+  category: "Platformer",
   condition: "Acceptable",
   platform: "Nintendo Switch",
-  user: third_user
+  user: second_user
 )
 game9_photo_url_a = "https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_YoshisCraftedWorld_image1600w.jpg"
 game9_photo_file_a = URI.open(game9_photo_url_a)
