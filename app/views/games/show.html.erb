@@ -5,11 +5,12 @@
     <%= link_to "Delete",
       game_path(@game),
       data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
-      class: "btn btn-flat delete"%>
+      class: "btn btn-flat delete" if policy(@game).destroy? %>
 </div>
 <div class="row col-12 game-card">
   <div class="col-lg-5 col-12 game-image-column">
-    <%= image_tag("botw", class: "game-image") %>
+    <%= cl_image_tag(@game.photos[1].key, class: "game-image") %>
+    <br>
   </div>
   <div class="col-lg-7 col-12 desc-col">
     <div class="game-description">
@@ -25,3 +26,7 @@
     <br>
   </div>
 </div>
+
+<%#= image_tag("botw", class: "game-image") %>
+<%#= cl_image_tag @game.photos[0].key %>
+<%#= cl_image_tag @game.photos[1].key %>
