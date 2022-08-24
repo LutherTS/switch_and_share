@@ -1,9 +1,14 @@
-<div class="row col-12 game-card">
-  <div class="col-lg-5 col-12 game-image-column">
+<div class="d-flex flex-row justify-content-between">
     <div class="button-back">
       <%= link_to "Back", games_path, class:"btn btn-flat back"%>
     </div>
-    <br>
+    <%= link_to "Delete",
+      game_path(@game),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+      class: "btn btn-flat delete"%>
+</div>
+<div class="row col-12 game-card">
+  <div class="col-lg-5 col-12 game-image-column">
     <%= image_tag("botw", class: "game-image") %>
   </div>
   <div class="col-lg-7 col-12 desc-col">
@@ -19,8 +24,4 @@
     </div>
     <br>
   </div>
-    <%= link_to "Delete",
-      game_path(@game),
-      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
-      class: "btn btn-flat delete"%>
 </div>
