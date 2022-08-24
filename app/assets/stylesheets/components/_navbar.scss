@@ -23,8 +23,8 @@
 
 .fa-gamepad {
   color: #50C7BB;
-  text-shadow: -2px 1px 0px rgba(0, 0, 0, .6);
-  padding-left: 1.5rem;
+  text-shadow: -2px 1px 0px rgba(0, 0, 0, .35);
+  padding-left: 57px;
 }
 
 .fa-gamepad:hover {
@@ -39,7 +39,7 @@
   font-family: "Silkscreen", cursive;
   font-weight: 400;
   color:#50C7BB;
-  text-shadow: -2px 1px 0px rgba(0, 0, 0, .6);
+  text-shadow: -2px 1px 0px rgba(0, 0, 0, .35);
   text-decoration: none;
 }
 
@@ -65,7 +65,7 @@
 .btn-flat {
   border: 2px solid #50C7BB;
   padding: 8px 24px;
-  border-radius: 50px;
+  border-radius: 16px;
   opacity: 0.6;
   transition: opacity 0.3s ease;
   margin-right: 10px;

@@ -12,16 +12,17 @@
           <div class="col-12 mb-3">
           <%= f.input :category, placeholder: 'Type the category...' %>
           </div>
-          <!-- <%= f.input :condition, placeholder: 'Type the condition...' %> -->
+          <%#= f.input :condition, placeholder: 'Type the condition...' %>
           <div class="col-12 mb-3">
             <%= f.input :condition, collection: condition_collection, prompt: 'Choose the condition...' %>
           </div>
-          <!-- <%= f.input :platform, placeholder: 'Type the platform...' %> -->
+          <%#= f.input :platform, placeholder: 'Type the platform...' %>
           <div class="col-12 mb-3">
             <%= f.input :platform, collection: platform_collection, selected: 'Nintendo Switch' %>
           </div>
           <div class="col-12 mb-3">
-          <%= f.association :user, collection: User.all, prompt: 'Provided by...' %>
+          <%#= f.association :user, collection: User.all, prompt: 'Provided by...' %>
+          <%= f.input :photos, as: :file, input_html: { multiple: true } %>
           </div>
           <div class="col-12">
           <%= f.submit %>
