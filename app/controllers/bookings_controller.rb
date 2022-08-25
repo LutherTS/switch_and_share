@@ -2,7 +2,17 @@ class BookingsController < ApplicationController
   before_action :set_game, only: [:new, :create]
 
   def new
-    @booking = Booking.new
+    @booking = Booking.new(
+      start_date: Date.today,
+      user: current_user,
+      game: @game
+    )
+    if @booking.save
+      redirect_to game_path(@game), notice: "#{@game.name} successfully booked !"
+    else
+      redirect_to game_path(@game), notice: "#{@game.name} can't be booked !"
+      # render "games/show", status: :unprocessable_entity
+    end
     authorize @booking
   end
 
@@ -26,38 +36,39 @@ class BookingsController < ApplicationController
     @game = Game.find(@booking.game_id)
   end
 
-  def update
-    if current_user == @booking.user
-      case @booking.status
-      when "pending" # Uniquement ceux du proprietaire
-        @booking.ongoing!
-      when "ongoing"
-        @booking.returning!
-      else
-        redirect_to dashboard_path
-      end
-      # redirect_to dashboard_path(current_user)
-    else
-      case @booking.status
-      when "opened" # Uniquement ceux de l'emprunteur
-        @booking.pending!
-      when "returning"
-        @booking.closed!
-      else
-        redirect_to dashboard_path
-      end
-    end
-    redirect_to dashboard_path
-    # if current_user == @game.user && @booking.status == 0
-    # @booking.status += 1 # -> 1 pending
-    # @booking.status.pending!
-    # if current_user == @game.booking && @booking.status == 1
-    # @booking.status += 1 # -> 2 ongoing
-    # if current_user == @game.booking && @booking.status == 2
-    # @booking.status += 1 # -> 3 returning
-    # if current_user == @game.user && @booking.status == 3
-    # @booking.status += 1 # -> 4 closed
-  end
+  # def update
+  #   @booking = Booking.find(params[:id])
+  #   if current_user == @booking.user
+  #     case @booking.status
+  #     when "pending" # Uniquement ceux du proprietaire
+  #       @booking.ongoing!
+  #     when "ongoing"
+  #       @booking.returning!
+  #     else
+  #       #redirect_to dashboard_path
+  #     end
+  #     # redirect_to dashboard_path(current_user)
+  #   else
+  #     case @booking.status
+  #     when "opened" # Uniquement ceux de l'emprunteur
+  #       @booking.pending!
+  #     when "returning"
+  #       @booking.closed!
+  #     else
+  #       #redirect_to dashboard_path
+  #     end
+  #   end
+  #   #redirect_to dashboard_path
+  #   # if current_user == @game.user && @booking.status == 0
+  #   # @booking.status += 1 # -> 1 pending
+  #   # @booking.status.pending!
+  #   # if current_user == @game.booking && @booking.status == 1
+  #   # @booking.status += 1 # -> 2 ongoing
+  #   # if current_user == @game.booking && @booking.status == 2
+  #   # @booking.status += 1 # -> 3 returning
+  #   # if current_user == @game.user && @booking.status == 3
+  #   # @booking.status += 1 # -> 4 closed
+  # end
   # if current_user == @booking.user
   # if current_user == @game.user
   # Après :
