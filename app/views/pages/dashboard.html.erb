@@ -2,21 +2,26 @@
   <h1 class="dashboard-title"><%= @user.username %>'s Dashboard</h1>
   <div class="row justify-content-between">
     <div class="my-games-col dash-col">
-      <p>My games</p>
-      <div class="col-6 my-games-pics">
-        <% @user.games.each do |game| %>
-        <li style="list-style-type: none"><%= game.name %></li>
-        <%= cl_image_tag(game.photos[0].key, class: "background-game-pic") %>
-        <%= cl_image_tag(game.photos[1].key, class: "game-pic") %>
+      <h3 class='game-title-show' style='text-align: center;'><b>Games I'm Lending</b></h3>
+      <div class="col-6 bookings-pics">
+        <% @bookings_on_my_games.each do |booking| %>
+        <li style="list-style-type: none"><p class="p-show"><%= booking.game.name %> - Status: <%= booking.status %></p></li>
+        <% if booking.status == 'opened' || booking.status == 'returning' %>
+          <%= link_to 'update status', update_booking_status_path(id: booking.id), data: {turbo_method: :patch} %>
+        <% end %>
+        <%= cl_image_tag(booking.game.photos[0].key, class: "background-booking-pic") %>
+        <%= cl_image_tag(booking.game.photos[1].key, class: "booking-pic")%>
         <% end %>
       </div>
     </div>
     <div class="my-bookings-col dash-col">
-      <p>My bookings</p>
+      <h3 class='game-title-show' style='text-align: center;'><b>Games I'm Renting</b></h3>
       <div class="col-6 bookings-pics">
-        <% @user.bookings.each do |booking| %>
-        <li style="list-style-type: none"><%= booking.game.name %> - Status: <%= booking.status %></li>
-        <%= link_to 'update status', update_booking_status_path(id: booking.id), data: {turbo_method: :patch} %>
+        <% @bookings_i_made.each do |booking| %>
+        <li style="list-style-type: none"><p class="p-show"><%= booking.game.name %> - Status: <%= booking.status %></p></li>
+        <% if booking.status == 'pending' || booking.status == 'ongoing' %>
+          <%= link_to 'update status', update_booking_status_path(id: booking.id), data: {turbo_method: :patch} %>
+        <% end %>
         <%= cl_image_tag(booking.game.photos[0].key, class: "background-booking-pic") %>
         <%= cl_image_tag(booking.game.photos[1].key, class: "booking-pic")%>
         <% end %>
