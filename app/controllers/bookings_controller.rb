@@ -13,11 +13,9 @@ class BookingsController < ApplicationController
       game: @game
     )
     if @booking.save
-      flash[:alert] = "Booking successful."
-      redirect_to game_path(@game)
+      redirect_to game_path(@game), notice: "#{@game.name} successfully booked !"
     else
-      flash[:alert] = "Booking failed. Try once more please."
-      redirect_to game_path(@game)
+      redirect_to game_path(@game), notice: "#{@game.name} can't be booked !"
       # render "games/show", status: :unprocessable_entity
     end
     authorize @booking
