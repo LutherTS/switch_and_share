@@ -4,11 +4,15 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  validates :username, presence: true
+
   has_many :games
   has_many :bookings
+  has_one_attached :avatar
 
   def name
     username
   end
   # For Simple Form's innate .name method to find .username.
+
 end

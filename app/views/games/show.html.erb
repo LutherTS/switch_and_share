@@ -24,9 +24,11 @@
       <p class="p-show"><i class="fa-solid fa-tv"></i> <strong>Platform:</strong> <em><%= @game.platform %></em></p>
       <p class="p-show"><i class="fa-solid fa-user-astronaut"></i> <strong>Provided by:</strong> <em><%= @game.user.username %></em></p>
       <p class="p-show"><i class="fa-solid fa-euro-sign"></i> <strong>Price per week:</strong> <em><%= @game.price_per_week %>€</em></p>
-      <div class="button-back">
-        <%= link_to "Book this game", new_game_booking_path(@game), class:"btn btn-flat booking"%>
-      </div>
+      <% unless current_user == @game.user %>
+        <div class="button-back">
+          <%= link_to "Book this game", new_game_booking_path(@game), class:"btn btn-flat booking"%>
+        </div>
+      <% end %>
     </div>
     <br>
   </div>
