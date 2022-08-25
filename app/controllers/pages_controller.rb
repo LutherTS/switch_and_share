@@ -7,4 +7,8 @@ class PagesController < ApplicationController
   def dashboard
     @user = current_user if user_signed_in?
   end
+
+  def account
+    @user = current_user if user_signed_in?
+  end
 end
