@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   patch 'dashboard/update_booking', to: 'pages#update_status', as: 'update_booking_status'
   # get 'account', to: 'pages#account', as: 'account'
 
-  resources :account, controller: :users
+  resources :users
   # resources :account, :controller => users
 
   resources :games do
