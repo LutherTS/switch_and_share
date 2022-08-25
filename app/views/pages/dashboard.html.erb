@@ -1,17 +1,26 @@
-
-<%= @user.username %>
-
-<p>My games</p>
-<% @user.games.each do |game| %>
-<li><%= game.name %></li>
-<%= cl_image_tag(game.photos[0].key) %>
-<%= cl_image_tag(game.photos[1].key) %>
-<% end %>
-
-<p>My bookings</p>
-<% @user.bookings.each do |booking| %>
-<li><%= booking.game.name %> - Status: <%= booking.status %></li>
-<%= link_to 'update status', update_booking_status_path(id: booking.id), data: {turbo_method: :patch} %>
-<%= cl_image_tag(booking.game.photos[0].key) %>
-<%= cl_image_tag(booking.game.photos[1].key) %>
-<% end %>
+<div class="container dashboard-container">
+  <h1 class="dashboard-title"><%= @user.username %>'s Dashboard</h1>
+  <div class="row justify-content-between">
+    <div class="my-games-col dash-col">
+      <p>My games</p>
+      <div class="col-6 my-games-pics">
+        <% @user.games.each do |game| %>
+        <li style="list-style-type: none"><%= game.name %></li>
+        <%= cl_image_tag(game.photos[0].key, class: "background-game-pic") %>
+        <%= cl_image_tag(game.photos[1].key, class: "game-pic") %>
+        <% end %>
+      </div>
+    </div>
+    <div class="my-bookings-col dash-col">
+      <p>My bookings</p>
+      <div class="col-6 bookings-pics">
+        <% @user.bookings.each do |booking| %>
+        <li style="list-style-type: none"><%= booking.game.name %> - Status: <%= booking.status %></li>
+        <%= link_to 'update status', update_booking_status_path(id: booking.id), data: {turbo_method: :patch} %>
+        <%= cl_image_tag(booking.game.photos[0].key, class: "background-booking-pic") %>
+        <%= cl_image_tag(booking.game.photos[1].key, class: "booking-pic")%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
