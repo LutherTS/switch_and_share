@@ -15,11 +15,22 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <%# if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Browse Games List", games_path, class: " btn btn-flat nav-link" %>
-          </li>
+        <div class="search-bar-components">
+            <li class="nav-item active">
+              <%= form_with url: games_path, method: :get, class: "d-flex" do %>
+              <%= text_field_tag :query,
+                params[:query],
+                class: "form-control",
+                placeholder: "game..."
+              %>
+              <%= button_tag(type: 'submit', class: "btn search-button" ) do %>
+                <i class='fa-solid fa-magnifying-glass'></i>
+              <% end %>
+            <% end %>
+            </li>
+          </div>
           <li class="nav-item">
-            <%= link_to "Add a Game", new_game_path, class: " btn btn-flat nav-link" %>
+            <%= link_to "Add", new_game_path, class: " btn btn-flat nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "detective-pikachu_16x9.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
