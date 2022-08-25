@@ -43,7 +43,8 @@ game1 = Game.new(
   category: "Adventure",
   condition: "Excellent",
   platform: "Nintendo Switch",
-  user: first_user
+  user: first_user,
+  price_per_week: 5
 )
 game1_photo_url_a = "https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/wiiu_14/SI_WiiU_TheLegendOfZeldaBreathOfTheWild_image1600w.jpg"
 game1_photo_file_a = URI.open(game1_photo_url_a)
@@ -58,7 +59,8 @@ game2 = Game.new(
   category: "Platformer",
   condition: "Good",
   platform: "Nintendo Switch",
-  user: second_user
+  user: second_user,
+  price_per_week: 6
 )
 game2_photo_url_a = "https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_SuperMarioOdyssey_image1600w.jpg"
 game2_photo_file_a = URI.open(game2_photo_url_a)
@@ -73,7 +75,8 @@ game3 = Game.new(
   category: "Role-Playing",
   condition: "Acceptable",
   platform: "Nintendo Switch",
-  user: third_user
+  user: third_user,
+  price_per_week: 4
 )
 game3_photo_url_a = "https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_XenobladeChronicles2_image1600w.jpg"
 game3_photo_file_a = URI.open(game3_photo_url_a)
@@ -88,7 +91,8 @@ game4 = Game.new(
   category: "Fighting",
   condition: "Excellent",
   platform: "Nintendo Switch",
-  user: first_user
+  user: first_user,
+  price_per_week: 3
 )
 game4_photo_url_a = "https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_SuperSmashBrosUltimate_02_image1600w.jpg"
 game4_photo_file_a = URI.open(game4_photo_url_a)
@@ -103,7 +107,8 @@ game5 = Game.new(
   category: "Racing",
   condition: "Good",
   platform: "Nintendo Switch",
-  user: second_user
+  user: second_user,
+  price_per_week: 3
 )
 game5_photo_url_a = "https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_MarioKart8Deluxe_image1600w.jpg"
 game5_photo_file_a = URI.open(game5_photo_url_a)
@@ -118,7 +123,8 @@ game6 = Game.new(
   category: "Action",
   condition: "Acceptable",
   platform: "Nintendo Switch",
-  user: first_user
+  user: first_user,
+  price_per_week: 6
 )
 game6_photo_url_a = "https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_AstralChain_image1600w.jpg"
 game6_photo_file_a = URI.open(game6_photo_url_a)
@@ -133,7 +139,8 @@ game7 = Game.new(
   category: "Strategy",
   condition: "Excellent",
   platform: "Nintendo Switch",
-  user: third_user
+  user: third_user,
+  price_per_week: 5
 )
 game7_photo_url_a = "https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_FireEmblemThreeHouses_image1600w.jpg"
 game7_photo_file_a = URI.open(game7_photo_url_a)
@@ -148,7 +155,8 @@ game8 = Game.new(
   category: "Platformer",
   condition: "Good",
   platform: "Nintendo Switch",
-  user: second_user
+  user: second_user,
+  price_per_week: 6
 )
 game8_photo_url_a = "https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_DonkeyKongCountryTropicalFreeze_image1600w.jpg"
 game8_photo_file_a = URI.open(game8_photo_url_a)
@@ -163,7 +171,8 @@ game9 = Game.new(
   category: "Platformer",
   condition: "Acceptable",
   platform: "Nintendo Switch",
-  user: second_user
+  user: second_user,
+  price_per_week: 6
 )
 game9_photo_url_a = "https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_YoshisCraftedWorld_image1600w.jpg"
 game9_photo_file_a = URI.open(game9_photo_url_a)
