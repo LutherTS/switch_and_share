@@ -21,7 +21,7 @@ class GamesController < ApplicationController
     @game.user = current_user
 
     if @game.save
-      redirect_to game_path(@game)
+      redirect_to game_path(@game), notice: "#{@game.name} successfully added"
     else
       render :new, status: :unprocessable_entity
     end
@@ -31,14 +31,14 @@ class GamesController < ApplicationController
   def destroy
     @game = Game.find(params[:id])
     @game.destroy
-    redirect_to games_path, status: :see_other
+    redirect_to games_path, status: :see_other, notice: "#{@game.name} successfully deleted"
     authorize @game
   end
 
   private
 
   def game_params
-    params.require(:game).permit(:name, :category, :condition, :platform, :user_id, photos: [])
+    params.require(:game).permit(:name, :category, :condition, :platform, :user_id, :price_per_week, photos: [])
     # Really need to specify :user_id rather than just :user.
   end
 end
