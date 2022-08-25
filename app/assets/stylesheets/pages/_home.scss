@@ -50,6 +50,9 @@
 
 body {
   background-color: #e4d2b8;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .homepage {
