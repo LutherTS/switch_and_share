@@ -84,6 +84,10 @@
 
 .main-nav-link {
   width: 30%;
+  &.site-name {
+    display: flex;
+    justify-content: space-around;
+  }
 }
 
 .navbar-collapse {
