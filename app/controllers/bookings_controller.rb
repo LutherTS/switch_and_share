@@ -8,7 +8,7 @@ class BookingsController < ApplicationController
       game: @game
     )
     if @booking.save
-      redirect_to game_path(@game), notice: "#{@game.name} successfully booked !"
+      redirect_to dashboard_path, notice: "#{@game.name} successfully booked !"
     else
       redirect_to game_path(@game), notice: "#{@game.name} can't be booked !"
       # render "games/show", status: :unprocessable_entity
