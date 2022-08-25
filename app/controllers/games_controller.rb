@@ -2,8 +2,13 @@ class GamesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @games = policy_scope(Game)
+    if params[:query].present?
+      @games = policy_scope(Game).where("name ILIKE ?", "%#{params[:query]}%")
+    else
+      @games = policy_scope(Game)
+    end
   end
+  # So Game.all under Pundit becomes policy_scope(Game)
 
   def show
     @game = Game.find(params[:id])

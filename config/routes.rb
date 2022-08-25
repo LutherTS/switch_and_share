@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   get 'dashboard', to: 'pages#dashboard', as: 'dashboard'
+  # get 'account', to: 'pages#account', as: 'account'
+
+  resources :account, controller: :users
+  # resources :account, :controller => users
 
   resources :games do
     resources :bookings

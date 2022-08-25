@@ -9,6 +9,7 @@
 require "open-uri"
 
 puts "Cleaning up database..."
+Booking.destroy_all
 Game.destroy_all
 User.destroy_all
 puts "Database cleaned."
