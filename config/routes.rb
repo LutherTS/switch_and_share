@@ -9,6 +9,10 @@ Rails.application.routes.draw do
 
   get 'dashboard', to: 'pages#dashboard', as: 'dashboard'
   patch 'dashboard/update_booking', to: 'pages#update_status', as: 'update_booking_status'
+  # get 'account', to: 'pages#account', as: 'account'
+
+  resources :account, controller: :users
+  # resources :account, :controller => users
 
   resources :games do
     resources :bookings, only: [:new, :create]

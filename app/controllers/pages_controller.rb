@@ -41,4 +41,8 @@ class PagesController < ApplicationController
     # if current_user == @game.user && @booking.status == 3
     # @booking.status += 1 # -> 4 closed
   end
+    
+  def account
+    @user = current_user if user_signed_in?
+  end
 end
