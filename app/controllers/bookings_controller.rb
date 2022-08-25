@@ -13,10 +13,10 @@ class BookingsController < ApplicationController
       game: @game
     )
     if @booking.save
-      flash[:alert]="Booking successful."
+      flash[:alert] = "Booking successful."
       redirect_to game_path(@game)
     else
-      flash[:alert]="Booking failed. Try once more please."
+      flash[:alert] = "Booking failed. Try once more please."
       redirect_to game_path(@game)
       # render "games/show", status: :unprocessable_entity
     end
@@ -24,10 +24,49 @@ class BookingsController < ApplicationController
   end
 
   def edit
+    @booking = Booking.find(params[:id])
+    @game = Game.find(@booking.game_id)
   end
 
   def update
+    if current_user == @booking.user
+      case @booking.status
+      when "pending" # Uniquement ceux du proprietaire
+        @booking.ongoing!
+      when "ongoing"
+        @booking.returning!
+      else
+        redirect_to dashboard_path
+      end
+      # redirect_to dashboard_path(current_user)
+    else
+      case @booking.status
+      when "opened" # Uniquement ceux de l'emprunteur
+        @booking.pending!
+      when "returning"
+        @booking.closed!
+      else
+        redirect_to dashboard_path
+      end
+    end
+    redirect_to dashboard_path
+    # if current_user == @game.user && @booking.status == 0
+    # @booking.status += 1 # -> 1 pending
+    # @booking.status.pending!
+    # if current_user == @game.booking && @booking.status == 1
+    # @booking.status += 1 # -> 2 ongoing
+    # if current_user == @game.booking && @booking.status == 2
+    # @booking.status += 1 # -> 3 returning
+    # if current_user == @game.user && @booking.status == 3
+    # @booking.status += 1 # -> 4 closed
   end
+  # if current_user == @booking.user
+  # if current_user == @game.user
+  # Après :
+  # Faire changer le texte du bouton update dépendamment de booking.status
+  # Désactiver le bouton update si @game.user ou @booking.user n'ont plus à y agir
+  # Ou remplacer par un bouton cancel dans les deux camps lorsqu'ils n'ont plus la main
+  # Et donc définir cancel, qui est plus ou moins destroy
 
   private
 

@@ -1,0 +1,16 @@
+
+<%= @user.username %>
+
+<p>My games</p>
+<% @user.games.each do |game| %>
+<li><%= game.name %></li>
+<%= cl_image_tag(game.photos[0].key) %>
+<%= cl_image_tag(game.photos[1].key) %>
+<% end %>
+
+<p>My bookings</p>
+<% @user.bookings.each do |booking| %>
+<li><%= booking.game.name %></li>
+<%= cl_image_tag(booking.game.photos[0].key) %>
+<%= cl_image_tag(booking.game.photos[1].key) %>
+<% end %>

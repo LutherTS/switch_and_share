@@ -25,8 +25,12 @@
             <%= image_tag "detective-pikachu_16x9.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "My bookings", "#", class: "dropdown-item" %>
-              <%= link_to "Account Settings", "#", class: "dropdown-item" %>
+              <%#= link_to "Account Settings", "#", class: "dropdown-item" %>
+              <% if user_signed_in? %>
               <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+              <% elsif !user_signed_in? %>
+              <%= link_to "Login", new_user_session_path, class: "dropdown-item" %>
+              <% end %>
             </div>
           </li>
         <%# else %>

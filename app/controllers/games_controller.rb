@@ -21,6 +21,7 @@ class GamesController < ApplicationController
     @game.user = current_user
 
     if @game.save
+      flash[:alert] = "#{@game.name} successfully added."
       redirect_to game_path(@game)
     else
       render :new, status: :unprocessable_entity
@@ -31,6 +32,7 @@ class GamesController < ApplicationController
   def destroy
     @game = Game.find(params[:id])
     @game.destroy
+    flash[:alert] = "#{@game.name} successfully removed."
     redirect_to games_path, status: :see_other
     authorize @game
   end
