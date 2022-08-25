@@ -1,17 +1,30 @@
-.game-pic, .background-game-pic, .booking-pic, .background-booking-pic {
+.background-game-pic, .background-booking-pic {
   width: 200%;
   overflow:hidden;
   border-radius: 10px;
+  filter: grayscale(100%);
+}
+
+.background-game-pic:hover, .background-booking-pic:hover {
+  box-shadow: 0px 0px 17px rgba(80,199, 187, 0.8);
+}
+
+.game-pic, .booking-pic {
+  width: 75%;
+  overflow:hidden;
+  border-radius: 10px;
+  box-shadow: 0px 0px 82px rgba(255, 255, 255, 1);
 }
 
 .my-games-col,.my-bookings-col{
   background-color: rgb(248, 228, 200);
   border-radius: 12px;
   padding: 20px;
+  box-shadow: 0px 2px 17px rgba(80,199, 187, 0.2);
 }
 
 .dash-col {
-  width: 45%;
+  width: 47%;
 }
 
 .dashboard-container {
@@ -20,5 +33,16 @@
 }
 
 .dashboard-title {
+  display:flex;
+}
 
+.my-game-card, .my-booking-card {
+  position:relative;
+}
+
+.my-game-card-image, .my-booking-card-image {
+  position: absolute;
+  top: 13px;
+  width: 72%;
+  left: 10px;
 }
