@@ -24,12 +24,13 @@
       <h3 class='game-title-show' style='text-align: center;'><b>Games I'm Renting</b></h3>
       <div class="col-6 bookings-pics">
         <% @bookings_i_made.each do |booking| %>
-        <li style="list-style-type: none"><p class="p-show"><%= booking.game.name %> - Status: <%= booking.status %></p></li>
-        <% if booking.status == 'pending' || booking.status == 'ongoing' %>
-          <%= link_to 'update status', update_booking_status_path(id: booking.id), data: {turbo_method: :patch} %>
-        <% end %>
         <div class="my-booking-card">
           <%= cl_image_tag(booking.game.photos[0].key, class: "background-booking-pic") %>
+          <li style="list-style-type: none"><p class="p-show booking-info"><%= booking.game.name %></p></li>
+          <li style="list-style-type: none"><p class="p-show status-text"> Status: <%= booking.status %></p></li>
+          <% if booking.status == 'pending' || booking.status == 'ongoing' %>
+            <%= link_to 'update status', update_booking_status_path(id: booking.id), data: {turbo_method: :patch} %>
+          <% end %>
           <div class="my-booking-card-image">
             <%= cl_image_tag(booking.game.photos[1].key, class: "booking-pic")%>
           </div>

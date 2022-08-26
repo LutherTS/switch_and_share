@@ -1,5 +1,5 @@
 .background-game-pic, .background-booking-pic {
-  width: 200%;
+  width: 100%;
   overflow:hidden;
   border-radius: 10px;
   filter: grayscale(100%);
@@ -10,7 +10,7 @@
 }
 
 .game-pic, .booking-pic {
-  width: 75%;
+  width: 37%;
   overflow:hidden;
   border-radius: 10px;
   box-shadow: 0px 0px 82px rgba(255, 255, 255, 1);
@@ -43,6 +43,7 @@
 
 .my-game-card, .my-booking-card {
   position:relative;
+  width: 200%;
 }
 
 .my-game-card-image, .my-booking-card-image {
@@ -50,4 +51,32 @@
   top: 13px;
   width: 72%;
   left: 10px;
+}
+
+.booking-info {
+  position:absolute;
+  top: 5%;
+  left: 30%;
+  background-color: #f9e6c9;
+  font-size: 2vw;
+  border-radius: 10px;
+  padding: 3px 8px;
+  margin: 8px 9px;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+.status-text {
+  position: absolute;
+  top: 15.5vw;
+  left: 23.5vw;
+  background-color: #842C36;
+  font-size: 2vw;
+  border-radius: 10px;
+  padding: 0px 8px;
+  margin: 0px 0px;
+  font-weight: bold;
+  overflow: hidden;
+  color: #f9e6c9;
+  height: 30px;
 }
