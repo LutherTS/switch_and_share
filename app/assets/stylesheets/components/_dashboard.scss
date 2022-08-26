@@ -99,7 +99,12 @@
 .my-game-card, .my-booking-card {
   position:relative;
   width: 200%;
-  padding-bottom: 20px;
+}
+
+.game-card-links {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .my-game-card-image, .my-booking-card-image {
@@ -124,7 +129,8 @@
 .status-text {
   position: absolute;
   right: 0;
-  bottom: 4px;
+  bottom: 0;
+  margin-bottom: 0;
   background-color: #842C36;
   border-radius: 10px 0px;
   padding: 3px 8px;
@@ -138,6 +144,10 @@
   transform: translate(5%, 30%);
 }
 
+.game-card-wrapper {
+  margin-bottom: 20px;
+}
+
 .dashboard-title-lesser {
   font-family: 'Silkscreen', cursive;
   margin-bottom: 30px;
@@ -149,7 +159,6 @@
   color: #F8E4C8;
   border-color: #F8E4C8;
   background-color: #44c3b6;
-  position: absolute;
   z-index: 999;
 }
 
