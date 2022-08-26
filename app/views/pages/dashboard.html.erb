@@ -10,8 +10,8 @@
           <p class="p-show booking-info"><%= booking.game.name %> - Lent to <%= booking.user.username %></p>
           <p class="p-show status-text lending <%= booking.color_class %>"> Status: <%= booking.status %></p>
           <% if booking.status == 'pending' %>
-          <%= link_to 'update status', update_booking_status_path(id: booking.id), data: {turbo_method: :patch}, class:'btn btn-flat update-status-button' %>
-          <%= link_to 'cancel booking', cancel_booking_path(id: booking.id), data: {turbo_method: :patch} %>
+          <%= link_to 'accept', update_booking_status_path(id: booking.id), data: {turbo_method: :patch}, class:'btn btn-flat update-status-button' %>
+          <%= link_to 'decline', cancel_booking_path(id: booking.id), data: {turbo_method: :patch} %>
         <% end %>
           <%#= cl_image_tag(booking.game.photos[1].key, class: "game-pic lending-pic") %>
         </div>
@@ -29,11 +29,11 @@
           <p class="p-show booking-info"><%= booking.game.name %></p>
           <p class="p-show status-text <%= booking.color_class %>"> Status: <%= booking.status %></p>
 
-          <% if booking.status == 'pending' || booking.status == 'ongoing' %>
-            <%= link_to 'update status', update_booking_status_path(id: booking.id), data: {turbo_method: :patch}, class:'btn btn-flat update-status-button' %>
-          <% end %>
           <%#= cl_image_tag(booking.game.photos[1].key, class: "booking-pic")%>
         </div>
+          <% if booking.status == 'ongoing' %>
+            <%= link_to 'close', update_booking_status_path(id: booking.id), data: {turbo_method: :patch}, class:'btn btn-flat update-status-button' %>
+          <% end %>
         <%#= cl_image_tag(booking.game.photos[0].key, class: "background-booking-pic") %>
         <%#= cl_image_tag(booking.game.photos[1].key, class: "booking-pic")%>
         <% end %>
