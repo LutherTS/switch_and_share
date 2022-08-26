@@ -2,18 +2,19 @@
   width: 100%;
   overflow:hidden;
   border-radius: 10px;
-  filter: grayscale(100%);
-}
-
-.background-game-pic:hover, .background-booking-pic:hover {
+  // filter: grayscale(100%);
+  filter: saturate(0.5);
   box-shadow: 0px 0px 17px rgba(80,199, 187, 0.8);
 }
 
 .game-pic, .booking-pic {
-  width: 37%;
-  overflow:hidden;
   border-radius: 10px;
-  box-shadow: 0px 0px 82px rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 82px white;
+  position: absolute;
+  left: 10px;
+  height: 58%;
+  top: 0;
+  transform: translate(5%, 41%);
 }
 
 .my-games-col,.my-bookings-col{
@@ -21,10 +22,64 @@
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0px 2px 17px rgba(80,199, 187, 0.2);
+  padding: 38px;
 }
 
 .dash-col {
   width: 47%;
+}
+
+@media(max-width: 728px) {
+  .dash-col {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .booking-info {
+    font-size:90%;
+  }
+}
+
+@media(max-width: 820px) {
+  .status-text {
+    font-size: 75%;
+  }
+  .booking-info {
+    font-size:90%;
+  }
+}
+
+@media(max-width: 900px) {
+  .booking-info {
+    font-size:83%;
+  }
+}
+
+@media(max-width: 375px) {
+  .status-text {
+    font-size: 72%;
+  }
+  .booking-info {
+    font-size:64%;
+  }
+}
+
+@media(max-width: 414px) {
+  .status-text {
+    font-size: 72%;
+  }
+  .booking-info {
+    font-size:64%;
+  }
+}
+
+@media(max-width: 360px) {
+  .status-text {
+    font-size: 72%;
+  }
+  .booking-info {
+    font-size:64%;
+  }
 }
 
 .dashboard-container {
@@ -34,7 +89,7 @@
 
 .dashboard-title {
   font-size: 2.5rem;
-  font-family: 'Titillium Web', sans-serif;
+  font-family: 'Silkscreen', cursive;
   text-align: center;
   color: #842C36;
   text-shadow: 1px 1px 0px wheat;
@@ -44,40 +99,52 @@
 .my-game-card, .my-booking-card {
   position:relative;
   width: 200%;
+  padding-bottom: 20px;
 }
 
 .my-game-card-image, .my-booking-card-image {
   position: absolute;
-  top: 13px;
+  top: 50px;
   width: 72%;
   left: 10px;
 }
 
 .booking-info {
-  position:absolute;
-  top: 5%;
-  left: 30%;
-  background-color: #f9e6c9;
-  font-size: 2vw;
-  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(246, 218, 174, .9);
+  border-radius: 0px 10px 10px 0px;
   padding: 3px 8px;
-  margin: 8px 9px;
-  font-weight: bold;
   overflow: hidden;
+  font-family: 'Silkscreen', cursive;
+  margin-top: 7px;
 }
 
 .status-text {
   position: absolute;
-  top: 15.5vw;
-  left: 23.5vw;
+  right: 0;
+  bottom: 4px;
   background-color: #842C36;
-  font-size: 2vw;
-  border-radius: 10px;
-  padding: 0px 8px;
-  margin: 0px 0px;
+  border-radius: 10px 0px;
+  padding: 3px 8px;
   font-weight: bold;
   overflow: hidden;
   color: #f9e6c9;
+  font-family: 'Silkscreen', cursive;
+}
+
+.lending {
+  bottom: 28px;
+}
+
+.lending-pic {
+  transform: translate(5%, 30%);
+}
+
+.dashboard-title-lesser {
+  font-family: 'Silkscreen', cursive;
+  margin-bottom: 30px;
 }
 
 .update-status-button {
