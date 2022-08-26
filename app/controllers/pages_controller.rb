@@ -49,7 +49,7 @@ class PagesController < ApplicationController
     @booking = Booking.find(params[:id])
     if current_user == @booking.game.user
       case @booking.status
-      when "opened"
+      when "pending"
         @booking.canceled!
       else
       end
