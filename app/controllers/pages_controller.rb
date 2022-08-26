@@ -14,20 +14,16 @@ class PagesController < ApplicationController
 
   def update_status
     @booking = Booking.find(params[:id])
-    if current_user == @booking.user
+    if current_user == @booking.game.user # Uniquement ceux de l'emprunteur
       case @booking.status
-      when "pending" # Uniquement ceux de l'emprunteur
+      when "pending"
         @booking.ongoing!
-      when "ongoing"
-        @booking.returning!
       else
         #redirect_to dashboard_path
       end
     else
-      case @booking.status
-      when "opened" # Uniquement ceux du proprietaire
-        @booking.pending!
-      when "returning"
+      case @booking.status # Uniquement ceux du proprietaire
+      when "ongoing"
         @booking.closed!
       else
         #redirect_to dashboard_path
