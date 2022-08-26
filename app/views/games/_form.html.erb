@@ -18,7 +18,7 @@
           </div>
           <%#= f.input :platform, placeholder: 'Type the platform...' %>
           <div class="col-6 mb-3">
-            <%= f.input :platform, collection: platform_collection, selected: 'Nintendo Switch' %>
+            <%= f.input :platform, collection: ["Nintendo Switch"], selected: 'Nintendo Switch' %>
           </div>
           <div class="col-6 mb-3">
             <%= f.input :price_per_week, input_html: { min: '0', step: 'any' }, placeholder: 'Price in €...' %>
