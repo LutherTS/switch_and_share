@@ -38,7 +38,7 @@ third_user = User.create!(
 )
 puts "Third user added."
 
-puts "Adding nine test games..."
+puts "Adding eighteen test games..."
 game1 = Game.new(
   name: "The Legend of Zelda: Breath of the Wild",
   category: "Adventure",
@@ -182,7 +182,151 @@ game9_photo_url_b = "https://fs-prod-cdn.nintendo-europe.com/media/images/05_pac
 game9_photo_file_b = URI.open(game9_photo_url_b)
 game9.photos.attach(io: game9_photo_file_b, filename: "Yoshi's Crafted World B")
 game9.save!
-puts "Nine test game.save!games added."
+
+game10 = Game.new(
+  name: "Ys VIII: Lacrimosa of Dana",
+  category: "Role-Playing",
+  condition: "Excellent",
+  platform: "Nintendo Switch",
+  user: first_user,
+  price_per_week: 5
+)
+game10_photo_url_a = "https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_YsVlllLacrimosaOfDana_image1600w.jpg"
+game10_photo_file_a = URI.open(game10_photo_url_a)
+game10.photos.attach(io: game10_photo_file_a, filename: "Ys VIII Lacrimosa of Dana A")
+game10_photo_url_b = "https://fs-prod-cdn.nintendo-europe.com/media/images/05_packshots/games_13/nintendo_switch_8/PS_NSwitch_YsVlllLacrimosaOfDana_PEGI.jpg"
+game10_photo_file_b = URI.open(game10_photo_url_b)
+game10.photos.attach(io: game10_photo_file_b, filename: "Ys VIII Lacrimosa of Dana B")
+game10.save!
+
+game11 = Game.new(
+  name: "Azure Striker Gunvolt: Striker Pack",
+  category: "Action",
+  condition: "Good",
+  platform: "Nintendo Switch",
+  user: second_user,
+  price_per_week: 6
+)
+game11_photo_url_a = "https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_download_software_1/H2x1_NSwitchDS_AzureStrikerGunvoltStrickerPack_image1600w.jpg"
+game11_photo_file_a = URI.open(game11_photo_url_a)
+game11.photos.attach(io: game11_photo_file_a, filename: "Azure Striker Gunvolt Striker Pack A")
+game11_photo_url_b = "https://fs-prod-cdn.nintendo-europe.com/media/images/05_packshots/games_13/nintendo_switch_8/PS_NSwitch_AzureStrikerGunvoltStrickerPack_PEGI.jpg"
+game11_photo_file_b = URI.open(game11_photo_url_b)
+game11.photos.attach(io: game11_photo_file_b, filename: "Azure Striker Gunvolt Striker Pack B")
+game11.save!
+
+game12 = Game.new(
+  name: "Minecraft",
+  category: "Adventure",
+  condition: "Acceptable",
+  platform: "Nintendo Switch",
+  user: third_user,
+  price_per_week: 4
+)
+game12_photo_url_a = "https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_Minecraft_image1600w.jpg"
+game12_photo_file_a = URI.open(game12_photo_url_a)
+game12.photos.attach(io: game12_photo_file_a, filename: "Minecraft A")
+game12_photo_url_b = "https://fs-prod-cdn.nintendo-europe.com/media/images/05_packshots/games_13/nintendo_switch_8/PS_NSwitch_Minecraft_enGB.jpg"
+game12_photo_file_b = URI.open(game12_photo_url_b)
+game12.photos.attach(io: game12_photo_file_b, filename: "Minecraft B")
+game12.save!
+
+game13 = Game.new(
+  name: "Street Fighter 30th Anniversary Collection",
+  category: "Fighting",
+  condition: "Excellent",
+  platform: "Nintendo Switch",
+  user: first_user,
+  price_per_week: 3
+)
+game13_photo_url_a = "https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_StreetFighter30thAnniversaryCollection_image1600w.jpg"
+game13_photo_file_a = URI.open(game13_photo_url_a)
+game13.photos.attach(io: game13_photo_file_a, filename: "Street Fighter 30th Anniversary Collection A")
+game13_photo_url_b = "https://fs-prod-cdn.nintendo-europe.com/media/images/05_packshots/games_13/nintendo_switch_8/PS_NSwitch_StreetFighter30thAnniversaryCollection_PEGI.jpg"
+game13_photo_file_b = URI.open(game13_photo_url_b)
+game13.photos.attach(io: game13_photo_file_b, filename: "Street Fighter 30th Anniversary Collection B")
+game13.save!
+
+game14 = Game.new(
+  name: "Battle Chasers: Nightwar",
+  category: "Role-Playing",
+  condition: "Good",
+  platform: "Nintendo Switch",
+  user: second_user,
+  price_per_week: 3
+)
+game14_photo_url_a = "https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_BattleChasersNightwar_image1600w.jpg"
+game14_photo_file_a = URI.open(game14_photo_url_a)
+game14.photos.attach(io: game14_photo_file_a, filename: "Battle Chasers Nightwar A")
+game14_photo_url_b = "https://fs-prod-cdn.nintendo-europe.com/media/images/05_packshots/games_13/nintendo_switch_8/PS_NSwitch_BattleChasersNightwar_PEGI.jpg"
+game14_photo_file_b = URI.open(game14_photo_url_b)
+game14.photos.attach(io: game14_photo_file_b, filename: "Battle Chasers Nightwar B")
+game14.save!
+
+game15 = Game.new(
+  name: "The Elder Scrolls V: Skyrim",
+  category: "Role-Playing",
+  condition: "Acceptable",
+  platform: "Nintendo Switch",
+  user: first_user,
+  price_per_week: 6
+)
+game15_photo_url_a = "https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_TheElderScrollsVSkyrim_image1600w.jpg"
+game15_photo_file_a = URI.open(game15_photo_url_a)
+game15.photos.attach(io: game15_photo_file_a, filename: "The Elder Scrolls V Skyrim A")
+game15_photo_url_b = "https://fs-prod-cdn.nintendo-europe.com/media/images/05_packshots/games_13/nintendo_switch_8/PS_NSwitch_TheElderScrollsVSkyrim_UKV.jpg"
+game15_photo_file_b = URI.open(game15_photo_url_b)
+game15.photos.attach(io: game15_photo_file_b, filename: "The Elder Scrolls V Skyrim B")
+game15.save!
+
+game16 = Game.new(
+  name: "Mario + Rabbids Kingdom Battle",
+  category: "Strategy",
+  condition: "Excellent",
+  platform: "Nintendo Switch",
+  user: third_user,
+  price_per_week: 5
+)
+game16_photo_url_a = "https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_MarioAndRabbidsKingdomBattle_EU_image1600w.jpg"
+game16_photo_file_a = URI.open(game16_photo_url_a)
+game16.photos.attach(io: game16_photo_file_a, filename: "Mario + Rabbids Kingdom Battle A")
+game16_photo_url_b = "https://fs-prod-cdn.nintendo-europe.com/media/images/05_packshots/games_13/nintendo_switch_8/PS_NSwitch_MarioAndRabbidsKingdomBattle_PEGI.jpg"
+game16_photo_file_b = URI.open(game16_photo_url_b)
+game16.photos.attach(io: game16_photo_file_b, filename: "Mario + Rabbids Kingdom Battle B")
+game16.save!
+
+game17 = Game.new(
+  name: "Lost Sphear",
+  category: "Role-Playing",
+  condition: "Good",
+  platform: "Nintendo Switch",
+  user: second_user,
+  price_per_week: 6
+)
+game17_photo_url_a = "https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_LostSphear_image1600w.jpg"
+game17_photo_file_a = URI.open(game17_photo_url_a)
+game17.photos.attach(io: game17_photo_file_a, filename: "Lost Sphear A")
+game17_photo_url_b = "https://fs-prod-cdn.nintendo-europe.com/media/images/05_packshots/games_13/nintendo_switch_8/PS_NSwitch_LostSphear_PEGI.jpg"
+game17_photo_file_b = URI.open(game17_photo_url_b)
+game17.photos.attach(io: game17_photo_file_b, filename: "Lost Sphear B")
+game17.save!
+
+game18 = Game.new(
+  name: "Little Nightmares Complete Edition",
+  category: "Platformer",
+  condition: "Acceptable",
+  platform: "Nintendo Switch",
+  user: second_user,
+  price_per_week: 6
+)
+game18_photo_url_a = "https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_LittleNightmaresCompleteEdition_image1600w.jpg"
+game18_photo_file_a = URI.open(game18_photo_url_a)
+game18.photos.attach(io: game18_photo_file_a, filename: "Little Nightmares Complete Edition A")
+game18_photo_url_b = "https://fs-prod-cdn.nintendo-europe.com/media/images/05_packshots/games_13/nintendo_switch_8/PS_NSwitch_LittleNightmaresCompleteEdition_UKV.jpg"
+game18_photo_file_b = URI.open(game18_photo_url_b)
+game18.photos.attach(io: game18_photo_file_b, filename: "Little Nightmares Complete Edition B")
+game18.save!
+puts "Eighteen test games added."
 
 
 puts "Seeding complete. (For sure now.)"

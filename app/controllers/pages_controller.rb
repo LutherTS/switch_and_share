@@ -11,6 +11,7 @@ class PagesController < ApplicationController
     @bookings_on_my_games = Booking.where(game_id: games_id)
   end
 
+
   def update_status
     @booking = Booking.find(params[:id])
     if current_user == @booking.user
@@ -46,5 +47,18 @@ class PagesController < ApplicationController
 
   def account
     @user = current_user if user_signed_in?
+  end
+
+  def booking_canceled!
+    @booking = Booking.find(params[:id])
+    if current_user == @booking.game.user
+      case @booking.status
+      when "opened"
+        @booking.canceled!
+      else
+      end
+    else
+    end
+    redirect_to dashboard_path
   end
 end
