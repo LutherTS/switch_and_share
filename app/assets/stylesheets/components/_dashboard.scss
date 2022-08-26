@@ -146,3 +146,26 @@
   font-family: 'Silkscreen', cursive;
   margin-bottom: 30px;
 }
+
+.update-status-button {
+  opacity: .9;
+  font-family: 'Silkscreen', cursive;
+  color: #F8E4C8;
+  border-color: #F8E4C8;
+  background-color: #44c3b6;
+  position: absolute;
+  z-index: 999;
+}
+
+.booking-pending-color {
+  background-color: #4A7BB3;
+}
+.booking-ongoing-color {
+  background-color: #77AC5A;
+}
+.booking-closed-color {
+  background-color: #8F8581;
+}
+.booking-canceled-color {
+  background-color: #FF5454;
+}
