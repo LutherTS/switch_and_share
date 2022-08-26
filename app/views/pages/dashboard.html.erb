@@ -5,8 +5,11 @@
       <h3 class='game-title-show' style='text-align: center;'><b>Games I'm Lending</b></h3>
       <div class="col-6 my-games-pics">
         <% @bookings_on_my_games.each do |booking| %>
-        <li style="list-style-type: none"><p class="p-show"><%= booking.game.name %> - Status: <%= booking.status %></p></li>
-        <% if booking.status == 'opened' || booking.status == 'returning' %>
+        <li style="list-style-type: none"><p class="p-show"><%= booking.game.name %> - Lent to <%= booking.user.username %> - Status: <%= booking.status %></p></li>
+        <% if booking.status == 'opened' %>
+          <%= link_to 'update status', update_booking_status_path(id: booking.id), data: {turbo_method: :patch} %>
+          <%= link_to 'cancel booking', cancel_booking_path(id: booking.id), data: {turbo_method: :patch} %>
+        <% elsif booking.status == 'returning' %>
           <%= link_to 'update status', update_booking_status_path(id: booking.id), data: {turbo_method: :patch} %>
         <% end %>
         <div class="my-game-card">
